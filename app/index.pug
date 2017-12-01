@@ -1,0 +1,16 @@
+extends layouts/default
+
+block content
+  .clock
+    .inner
+      .minute
+        .left
+          .circle
+        .right
+          .circle
+      .graduations
+        - for (i = 60; i >= 0; i--)
+          .graduation
+            if(i % 5 == 0 && i != 60)
+              .label= i
+    button.stop <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><path d="M36 72A36 36 0 1 0 0 36a36 36 0 0 0 36 36zm0-66A30 30 0 1 1 6 36 30.09 30.09 0 0 1 36 6z"/><path d="M26 50h20a4 4 0 0 0 4-4V26a4 4 0 0 0-4-4H26a4 4 0 0 0-4 4v20a4 4 0 0 0 4 4z"/></svg>
