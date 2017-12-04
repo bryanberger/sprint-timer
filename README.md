@@ -5,7 +5,7 @@
 `gulp serve`
 
 ## Deploy
-TBD
+`git subtree push --prefix dist heroku master`
 
 ## Usage
 
