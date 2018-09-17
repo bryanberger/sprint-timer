@@ -59,6 +59,12 @@ footer {
   box-sizing: border-box !important;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
 // ---- BUTTON
 button {
   font-family: 'Cutive Mono', monospace;
@@ -70,12 +76,14 @@ button {
   height: 24px;
   padding: 0;
   background-color: #fff;
-  margin-top: -($clockPadding / 2);
-  margin-left: -($clockPadding / 2);
 
   &:hover {
     background-color: $clockBackground;
   }
+}
+
+button.unmute {
+  display: none;
 }
 
 // ---- CLOCK
