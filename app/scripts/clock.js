@@ -136,6 +136,9 @@ export class Clock {
 
       if(!this.isMuted) {
         sound.play()
+      } else {
+        sound.pause()
+        sound.currentTime = 0
       }
     }
   }
