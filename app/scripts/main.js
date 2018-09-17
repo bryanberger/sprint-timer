@@ -12,14 +12,14 @@ btnStop.addEventListener('click', function(e) {
 
 btnMute.addEventListener('click', function(e) {
   clock.mute()
-  btnMute.style.display = "none"
-  btnUnMute.style.display = "block"
+  btnMute.style.display = 'none'
+  btnUnMute.style.display = 'block'
 })
 
 btnUnMute.addEventListener('click', function(e) {
   clock.unmute()
-  btnMute.style.display = "block"
-  btnUnMute.style.display = "none"
+  btnMute.style.display = 'block'
+  btnUnMute.style.display = 'none'
 })
 
 Array.from(graduations).forEach(graduation => {
