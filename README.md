@@ -5,6 +5,7 @@
 `gulp serve`
 
 ## Deploy
+`gulp build`
 `git subtree push --prefix dist heroku master`
 
 ## Usage
