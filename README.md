@@ -1,12 +1,19 @@
-## Install
-`npm install`
+# Sprint Timer
 
-## Develop
-`gulp serve`
+A digital countdown clock used to timebox your team discussions. Built out of the need to stay on task with remote employees, where a physical timer does not translate well.
+
+## Live
+https://ga-timer.herokuapp.com
+
+## Install / Develop
+-   `npm install`
+-   `gulp serve`
 
 ## Deploy
-`gulp build`
-`git subtree push --prefix dist heroku master`
+-   `gulp build`
+-   `git subtree push --prefix dist heroku master`
+
+_This deploys `/dist` to our heroku dyno_
 
 ## Usage
 
@@ -16,4 +23,8 @@
 
 ---
 
-_**note**: The timer plays a sound for `~4 seconds` when the time runs out._
+_**note**: The timer plays a sound for `~4 seconds` when the time runs out, unless muted._
+
+## Credits
+- Timer CSS forked and modified from this [Codepen](https://codepen.io/ky0suke/pen/MyNXWX) by Kyosuke.
+- Inspired by the [Time Timer MOD® Sprint Edition](https://www.timetimer.com/products/time-timer-mod-sprint-edition).
