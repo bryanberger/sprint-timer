@@ -1,5 +1,7 @@
 # Sprint Timer
 
+![Sprint Timer Example](https://raw.githubusercontent.com/bryanberger/sprint-timer/master/demo.png)
+
 A digital countdown clock used to timebox your team discussions. Built out of the need to stay on task with remote employees, where a physical timer does not translate well.
 
 ## Live
