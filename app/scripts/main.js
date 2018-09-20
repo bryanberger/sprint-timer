@@ -26,6 +26,6 @@ Array.from(graduations).forEach(graduation => {
   graduation.addEventListener('click', function(e) {
     let minutes = parseFloat(e.target.innerText)
     minutes = minutes == 0 ? 60 : minutes
-    clock.start(1)
+    clock.start(minutes)
   })
 })
