@@ -5,6 +5,7 @@ export class Clock {
    */
   constructor() {
     this.totalMinutes, this.totalMs, this.endDate, this.timerInterval
+    this.startedPlaying = false
     this.isMuted        = false
     this.minuteLeft     = document.querySelector('.minute .left .circle')
     this.minuteRight    = document.querySelector('.minute .right .circle')
@@ -30,14 +31,20 @@ export class Clock {
     this.minuteRight.style.display = 'none'
     this.sound.pause()
     this.sound.currentTime = 0
+    this.startedPlaying = false
   }
 
   mute() {
     this.isMuted = true
+    this.sound.pause()
   }
 
   unmute() {
     this.isMuted = false
+
+    if(this.startedPlaying) {
+      this.sound.play()
+    }
   }
 
   /**
@@ -123,9 +130,10 @@ export class Clock {
 
   playSound() {
     let times = 4
-    let loop = setInterval(repeat, 750)
-    let sound = this.sound
-    sound.volume = 1.0
+    let loop = setInterval(repeat.bind(this), 500)
+
+    this.sound.volume = 1.0
+    this.startedPlaying = true
 
     function repeat() {
       times--
@@ -135,10 +143,10 @@ export class Clock {
       }
 
       if(!this.isMuted) {
-        sound.play()
+        this.sound.play()
       } else {
-        sound.pause()
-        sound.currentTime = 0
+        this.sound.pause()
+        clearInterval(loop)
       }
     }
   }
