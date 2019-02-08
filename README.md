@@ -10,6 +10,7 @@ https://ga-timer.herokuapp.com
 ## Install / Develop
 -   `npm install`
 -   `gulp serve`
+-   `bower install`
 
 ## Deploy
 -   `gulp build`
