@@ -89,19 +89,19 @@ gulp.task('html', ['views', 'styles', 'scripts'], () => {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     })))
-    .pipe(gulp.dest('dist/public'))
+    .pipe(gulp.dest('dist'))
 });
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin()))
-    .pipe(gulp.dest('dist/public/images'));
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
-    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/public/fonts')));
+    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
 });
 
 gulp.task('extras', () => {
@@ -111,10 +111,10 @@ gulp.task('extras', () => {
     '!app/*.pug'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist/public'));
+  }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist/public']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
   runSequence(['clean', 'wiredep'], ['views', 'styles', 'scripts', 'fonts'], () => {
@@ -148,7 +148,7 @@ gulp.task('serve:dist', ['default'], () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['dist/public']
+      baseDir: ['dist']
     }
   });
 });
@@ -202,7 +202,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/public/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('deploy', ['build'], () => {
