@@ -14,9 +14,10 @@ https://ga-timer.herokuapp.com
 
 ## Deploy
 -   `gulp build`
--   `git subtree push --prefix dist heroku master`
+-   `gulp deploy`
+-   `(deprecated) git subtree push --prefix dist heroku master`
 
-_This deploys `/dist` to our heroku dyno_
+_This deploys `/dist` to a gh-pages branch. You may optional setup server.js to be pushed to heroku._
 
 ## Usage
 
