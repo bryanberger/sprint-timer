@@ -5,7 +5,7 @@
 A digital countdown clock used to timebox your team discussions. Built out of the need to stay on task with remote employees, where a physical timer does not translate well.
 
 ## Live
-https://ga-timer.herokuapp.com
+https://bryanberger.github.io/sprint-timer
 
 ## Install / Develop
 -   `npm install`
